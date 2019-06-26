@@ -1,14 +1,19 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Curso Javascript</title>
     </head>
     <body>
-        <script>
-            function exibeAlgo(){
-                console.log('Hello World')
-            }
+        <div id="app">
+            <div class="box"></div>
+        </div>
 
-            setInterval(exibeAlgo, 1000)
+        <script>
+            var boxElement = document.querySelector('.box')
+            console.log(boxElement)
+            boxElement.style.width = 100
+            boxElement.style.height = 100
+            boxElement.style.backgroundColor = '#f00'
         </script>
     </body>
 </html>

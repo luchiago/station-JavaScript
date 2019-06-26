@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercise 1</title>
+    </head>
+    <body>
+        <button id="botao">Novo quadrado</button>
+        <div id="boxes"></div>
+
+        <script>
+            var btnElement = document.getElementById('botao')
+            var boxElement = document.getElementById('boxes')
+
+            btnElement.onclick = function(){
+                var box = document.createElement('div')
+
+                box.style.width = '100px'
+                box.style.height = '100px'
+                box.style.backgroundColor = '#F00'
+
+                boxElement.appendChild(box)
+            }
+        </script>
+    </body>
+</html>

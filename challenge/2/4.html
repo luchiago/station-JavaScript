@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4</title>
+</head>
+
+<body>
+    <ul id="lista"></ul>
+    <input type="text" name="nome">
+    <button onClick="adicionar()">Adicionar</button>
+
+    <script>
+        var nomes = ["Diego", "Gabriel", "Lucas"]
+
+        var listElement = document.getElementById('lista')
+        for (name of nomes) {
+            var nameElement = document.createElement('li')
+            var textElement = document.createTextNode(name)
+            nameElement.appendChild(textElement)
+            listElement.appendChild(nameElement)
+        }
+
+        function adicionar(){
+            var inputElement = document.querySelector('input')
+            var nameElement = document.createElement('li')
+            var textElement = document.createTextNode(inputElement.value)
+            nameElement.appendChild(textElement)
+            listElement.appendChild(nameElement)
+            inputElement.value = ''
+        }
+
+        
+    </script>
+</body>
+
+</html>
