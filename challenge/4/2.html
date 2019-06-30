@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>2 Exercise</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="user">
+            <button onclick="buscar()">Buscar</button>
+            <ul></ul>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            var inputElement = document.querySelector('#app input')
+            var listElement = document.querySelector('#app ul')
+
+            function buscar() {
+                var url = 'https://api.github.com/users/'
+                url += inputElement.value + '/repos'
+                inputElement.value = ''
+                axios.get(url)
+                    .then(function(response) {
+                        //console.log(response.data)
+                        build_list(response.data)
+                    })
+                    .catch(function(error) {
+                        console.log('Erro')
+                    })
+            }
+
+            function build_list(data) {
+                for (d of data) {
+                    var reposElement = document.createElement('li')
+                    var reposText = document.createTextNode(d.name)
+
+                    reposElement.appendChild(reposText)
+                    listElement.appendChild(reposElement)
+                }
+                //console.log(data)
+            }
+        </script>
+    </body>
+</html>
